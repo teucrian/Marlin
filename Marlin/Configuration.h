@@ -787,7 +787,7 @@
  *
  * With this option disabled, bang-bang will be used. BED_LIMIT_SWITCHING enables hysteresis.
  */
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 #if ENABLED(PIDTEMPBED)
   //#define MIN_BED_POWER 0
@@ -1369,7 +1369,7 @@
  *   https://blog.kyneticcnc.com/2018/10/computing-junction-deviation-for-marlin.html
  */
 #if DISABLED(CLASSIC_JERK)
-  #define JUNCTION_DEVIATION_MM 0.013 // (mm) Distance from real junction edge
+  #define JUNCTION_DEVIATION_MM 0.054 // (default 01013) (mm) Distance from real junction edge
   #define JD_HANDLE_SMALL_SEGMENTS    // Use curvature estimation instead of just the junction angle
                                       // for small segments (< 1mm) with large junction angles (> 135°).
 #endif
@@ -1398,7 +1398,7 @@
  * The probe replaces the Z-MIN endstop and is used for Z homing.
  * (Automatically enables USE_PROBE_FOR_Z_HOMING.)
  */
-#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
+//#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
 #define USE_PROBE_FOR_Z_HOMING
@@ -1458,7 +1458,7 @@
 /**
  * The BLTouch probe uses a Hall effect sensor and emulates a servo.
  */
-//#define BLTOUCH
+#define BLTOUCH
 
 /**
  * MagLev V4 probe by MDD
@@ -1634,7 +1634,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 64, -16, 0 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -2177,7 +2177,7 @@
 #if ANY(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 3
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -2187,7 +2187,7 @@
 
     // Beyond the probed grid, continue the implied tilt?
     // Default is to maintain the height of the nearest edge.
-    //#define EXTRAPOLATE_BEYOND_GRID
+    #define EXTRAPOLATE_BEYOND_GRID
 
     //
     // Subdivision of the grid by Catmull-Rom method.
@@ -2330,7 +2330,7 @@
  * - Allows Z homing only when XY positions are known and trusted.
  * - If stepper drivers sleep, XY homing may be required again before Z homing.
  */
-//#define Z_SAFE_HOMING
+#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT X_CENTER  // (mm) X point for Z homing
@@ -3071,7 +3071,12 @@
 //
 // MKS MINI12864 V3 is an alias for FYSETC_MINI_12864_2_1. Type A/B. NeoPixel RGB Backlight.
 //
-//#define MKS_MINI_12864_V3
+#define MKS_MINI_12864_V3
+//
+// Addition to implement MKS_MINI_12864_V3 LCD aka FYSETC_MINI_12864_2_1 
+#define NO_CONTROLLER_CUSTOM_WIRING_WARNING
+// in absence of ultralcd_impl_DOGM.h [https://wiki.fysetc.com/Mini12864_Panel/]
+#define LCD_CONTRAST                     255
 
 //
 // MKS LCD12864A/B with graphic controller and SD support. Follows MKS_MINI_12864 pinout.
