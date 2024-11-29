@@ -29,6 +29,7 @@
  * Marlin release version identifier
  */
 //#define SHORT_BUILD_VERSION "bugfix-2.1.x"
+#define SHORT_BUILD_VERSION "blackfriday"
 
 /**
  * Verbose version identifier which should contain a reference to the location
@@ -41,7 +42,7 @@
  * here we define this default string as the date where the latest release
  * version was tagged.
  */
-//#define STRING_DISTRIBUTION_DATE "2024-11-19"
+#define STRING_DISTRIBUTION_DATE "2024-11-29"
 
 /**
  * The protocol for communication to the host. Protocol indicates communication
@@ -53,7 +54,7 @@
 /**
  * Defines a generic printer name to be output to the LCD after booting Marlin.
  */
-//#define MACHINE_NAME "3D Printer"
+#define MACHINE_NAME "Annette AM8"
 
 /**
  * The SOURCE_CODE_URL is the location where users will find the Marlin Source
@@ -61,7 +62,7 @@
  * has a distinct Github fork— the Source Code URL should just be the main
  * Marlin repository.
  */
-//#define SOURCE_CODE_URL "github.com/MarlinFirmware/Marlin"
+#define SOURCE_CODE_URL "github.com/teucrian/Marlin/tree/restore-main"
 
 /**
  * Default generic printer UUID.
