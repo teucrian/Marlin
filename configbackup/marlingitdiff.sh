@@ -174,3 +174,4 @@ Linear advance
 To Do:
 
 Fine-tune homing currents (now x, y at 93 mA) and define IMPROVE_HOMING_RELIABILITY
+Done actually. X_CURRENT_HOME, Y_CURRENT_HOME raised to 600, X_STALL_SENSITIVITY, Y_STALL_SENSITIVITY left at 93 for these TMC2209
