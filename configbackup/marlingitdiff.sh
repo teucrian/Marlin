@@ -175,3 +175,13 @@ To Do:
 
 Fine-tune homing currents (now x, y at 93 mA) and define IMPROVE_HOMING_RELIABILITY
 Done actually. X_CURRENT_HOME, Y_CURRENT_HOME raised to 600, X_STALL_SENSITIVITY, Y_STALL_SENSITIVITY left at 93 for these TMC2209
+
+
+
+
+
+
+Marlin/src/inc/Warnings.cpp:736:6: warning: #warning "If SENSORLESS_HOMING is unreliable with QUICK_HOME try adjusting SENSORLESS_BACKOFF_MM, Travel Acceleration (M204 T), Homing Feedrate (M210 XY), or disable QUICK_HOME." [-Wcpp]
+  736 |     #warning "If SENSORLESS_HOMING is unreliable with QUICK_HOME try adjusting SENSORLESS_BACKOFF_MM, Travel Acceleration (M204 T), Homing Feedrate (M210 XY), or disable QUICK_HOME."
+      |      ^~~~~~~
+      
